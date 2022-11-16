@@ -3,7 +3,7 @@
 A simple todo app backend api made with NodeJS.
 To make it more challenging GraphQL used as query language.
 
-Watch in [Youtube](https://www.youtube.com/watch?v=4QzFVQsD-9I)
+Watch in [Youtube](https://www.youtube.com/watch?v=YVLCB8YoEVw)
 
 ## Tech
 
