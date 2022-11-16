@@ -2,7 +2,7 @@ const { db } = require('../app/db');
 
 exports.getTodos = async (root, args, context) => {
     try {
-        const results = await db.query('select * from todos');
+        const results = await db.query('select * from todos where user_id = $1 order by time desc', [context.uid]);
         return results.rows;
     } catch (err) {
         console.log(err);
@@ -10,7 +10,6 @@ exports.getTodos = async (root, args, context) => {
 }
 
 exports.createTodo = async (root, args, context) => {
-    console.log(context);
     try {
         const results = await db.query('insert into todos (todo, user_id) values ($1, $2)', [args.title, context.uid]);
         if (results.rowCount >= 1) {
